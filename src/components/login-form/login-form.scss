@@ -1,3 +1,4 @@
+@use "../../themes/generated/variables.base-dark.scss" as baseDark;
 @import "../../themes/generated/variables.base.scss";
 
 .login-form {
@@ -15,4 +16,8 @@
     margin: 10px 0;
     color: rgba($base-text-color, alpha($base-text-color) * 0.7);
   }
+}
+
+.dx-swatch-base-dark .login-form .form-text {
+  color: rgba(baseDark.$base-text-color, alpha(baseDark.$base-text-color) * 0.7);
 }

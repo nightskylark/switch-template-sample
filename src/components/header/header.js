@@ -1,11 +1,15 @@
 import React from 'react';
 import Toolbar, { Item } from 'devextreme-react/toolbar';
 import Button from 'devextreme-react/button';
+import Switch from 'devextreme-react/switch';
 import UserPanel from '../user-panel/user-panel';
 import './header.scss';
 import { Template } from 'devextreme-react/core/template';
+import { useTheme } from '../../contexts/theme';
 
 export default function Header({ menuToggleEnabled, title, toggleMenu }) {
+  const { dark, toggleTheme } = useTheme();
+
   return (
     <header className={'header-component'}>
       <Toolbar className={'header-toolbar'}>
@@ -23,6 +27,15 @@ export default function Header({ menuToggleEnabled, title, toggleMenu }) {
           text={title}
           visible={!!title}
         />
+        <Item
+          location={'after'}
+          locateInMenu={'auto'}
+        >
+          <Switch className={'dx-field-value'}
+            value={dark}
+            onValueChanged={toggleTheme}
+          />
+        </Item>
         <Item
           location={'after'}
           locateInMenu={'auto'}

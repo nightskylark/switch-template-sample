@@ -1,3 +1,4 @@
+@use "../../themes/generated/variables.base-dark.scss" as baseDark;
 @import "../../themes/generated/variables.base.scss";
 
 .user-info {
@@ -29,6 +30,10 @@
     color: $base-text-color;
     margin: 0 9px;
   }
+}
+
+.dx-swatch-base-dark .user-info .user-name{
+  color: baseDark.$base-text-color;
 }
 
 .user-panel {
